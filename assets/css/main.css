@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--primary-font);
+}
+:root{
+    --primary-color: #48C89C;
+    --secondary-color: #FF9442;
+    --primary-color-trans: #F4FAF7;
+    --black-color: #202430;
+    --black-color-trans: #646464;
+    --primary-box-shadow: 5px 15px 25px 0px #8bad8a33;
+    --primary-transition: 0.3s ease-in-out;
+    --white-color: #fff;
+    --primary-font: "Bricolage Grotesque";
+    --secondary-font: "Raleway";
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+html::-webkit-scrollbar{
+    width: 10px;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+}
+html::-webkit-scrollbar-track{
+    background: var(--secondary-color);
+}
+html::-webkit-scrollbar-button{
+    background: var(--secondary-color);
+    height: 10px;
+}
+.container{
+    max-width: 1320px;
+    padding: 0 20px;
+    margin: 0 auto;
+}

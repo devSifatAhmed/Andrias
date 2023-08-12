@@ -1,0 +1,117 @@
+header{
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--white-color);
+    z-index: 999;
+    padding: 30px 0;
+    transition: var(--primary-transition);
+}
+header.active{
+    padding: 15px 0;
+}
+.header-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.logo::after{
+    content: ".";
+    color: var(--secondary-color);
+}
+.navbar{
+    display: flex;
+    align-items: center;
+}
+.main-menu{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.main-menu>li{
+    padding: 10px 0;
+}
+.main-menu>li>a{
+    color: var(--black-color);
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    transition: var(--primary-transition);
+    font-family: var(--secondary-font);
+}
+.main-menu>li:hover>a,
+.main-menu>li:focus>a{
+    color: var(--primary-color);
+}
+.main-menu>li>a::after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: var(--secondary-color);
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%) scale(0);
+    transition: var(--primary-transition);
+}
+.main-menu>li:hover>a::after,
+.main-menu>li:focus>a::after{
+    transform: translateX(-50%) scale(1);
+}
+.sub-menu>a::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f107" !important;
+    width: fit-content !important;
+    height: fit-content !important;
+    color: var(--black-color);
+    background: transparent !important;
+    position:unset !important;
+    transition: var(--primary-transition);
+}
+.sub-menu:hover>a::after,
+.sub-menu:focus>a::after{
+    color: var(--primary-color) !important;
+}
+.sub-menu{
+    position: relative;
+}
+.sub-menu>div{
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    background: var(--black-color);
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    transition: var(--primary-transition);
+    transform: scaleY(0);
+    transform-origin: top;
+}
+.sub-menu:hover>div,
+.sub-menu:focus>div{
+    transform: scaleY(1);
+}
+.sub-menu>div>a{
+    color: var(--white-color);
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    padding: 10px 20px !important;
+    transition: var(--primary-transition);
+    position: relative;
+    width: 100% !important;
+    font-family: var(--secondary-font);
+}
+.sub-menu>div>a:hover,
+.sub-menu>div>a:focus{
+    background: var(--primary-color) !important;
+}
