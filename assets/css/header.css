@@ -1,4 +1,4 @@
-header{
+header {
     width: 100%;
     height: fit-content;
     position: fixed;
@@ -9,37 +9,46 @@ header{
     padding: 30px 0;
     transition: var(--primary-transition);
 }
-header.active{
+
+header.active {
     padding: 15px 0;
 }
-.header-wrapper{
+
+.header-wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.logo{
+
+.logo {
     font-size: 40px;
     font-weight: 700;
     color: var(--primary-color);
 }
-.logo::after{
+
+.logo::after {
     content: ".";
     color: var(--secondary-color);
 }
-.navbar{
+
+.navbar {
     display: flex;
     align-items: center;
 }
-.main-menu{
+
+.main-menu {
     display: flex;
     align-items: center;
     gap: 40px;
+    z-index: 888;
 }
-.main-menu>li{
+
+.main-menu>li {
     padding: 10px 0;
 }
-.main-menu>li>a{
+
+.main-menu>li>a {
     color: var(--black-color);
     font-size: 16px;
     font-weight: 600;
@@ -47,11 +56,13 @@ header.active{
     transition: var(--primary-transition);
     font-family: var(--secondary-font);
 }
+
 .main-menu>li:hover>a,
-.main-menu>li:focus>a{
+.main-menu>li:focus>a {
     color: var(--primary-color);
 }
-.main-menu>li>a::after{
+
+.main-menu>li>a::after {
     position: absolute;
     content: "";
     width: 10px;
@@ -63,11 +74,13 @@ header.active{
     transform: translateX(-50%) scale(0);
     transition: var(--primary-transition);
 }
+
 .main-menu>li:hover>a::after,
-.main-menu>li:focus>a::after{
+.main-menu>li:focus>a::after {
     transform: translateX(-50%) scale(1);
 }
-.sub-menu>a::after{
+
+.sub-menu>a::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f107" !important;
@@ -75,17 +88,21 @@ header.active{
     height: fit-content !important;
     color: var(--black-color);
     background: transparent !important;
-    position:unset !important;
+    position: unset !important;
     transition: var(--primary-transition);
 }
+
 .sub-menu:hover>a::after,
-.sub-menu:focus>a::after{
+.sub-menu:focus>a::after {
     color: var(--primary-color) !important;
 }
-.sub-menu{
+
+.sub-menu {
     position: relative;
+    z-index: 777;
 }
-.sub-menu>div{
+
+.sub-menu>div {
     position: absolute;
     top: 100%;
     left: -20px;
@@ -96,12 +113,15 @@ header.active{
     transition: var(--primary-transition);
     transform: scaleY(0);
     transform-origin: top;
+    z-index: 1;
 }
+
 .sub-menu:hover>div,
-.sub-menu:focus>div{
+.sub-menu:focus>div {
     transform: scaleY(1);
 }
-.sub-menu>div>a{
+
+.sub-menu>div>a {
     color: var(--white-color);
     font-size: 16px !important;
     font-weight: 400 !important;
@@ -111,7 +131,75 @@ header.active{
     width: 100% !important;
     font-family: var(--secondary-font);
 }
+
 .sub-menu>div>a:hover,
-.sub-menu>div>a:focus{
+.sub-menu>div>a:focus {
     background: var(--primary-color) !important;
+}
+.nav-burger{
+    display: none;
+}
+@media(max-width: 750px) {
+    .main-menu {
+        gap: 30px;
+    }
+}
+
+@media(max-width: 700px) {
+    .nav-burger{
+        display: flex;
+        width: fit-content;
+        height: fit-content;
+        font-size: 22px;
+        color: var(--primary-color);
+        background: transparent;
+        outline: none;
+        border: none;
+    }
+    .main-menu {
+        position: fixed;
+        top: 0;
+        left: -251px;
+        opacity: 0;
+        width: 250px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        padding-top: 70px;
+        background: var(--primary-color);
+        overflow-y: scroll;
+        transition: var(--primary-transition);
+    }
+    .main-menu.active{
+        left: 0;
+        opacity: 1;
+    }
+
+    .main-menu>li:hover>a,
+    .main-menu>li:focus>a {
+        color: var(--white-color);
+    }
+
+    .sub-menu>div {
+        left: -60px;
+    }
+
+    .sub-menu:hover>a::after,
+    .sub-menu:focus>a::after {
+        color: var(--white-color) !important;
+    }
+
+    .sub-menu>div>a:hover,
+    .sub-menu>div>a:focus {
+        background: var(--white-color) !important;
+        color: var(--black-color) !important;
+        font-weight: 600 !important;
+    }
+}
+@media(max-width: 355px){
+    .main-menu {
+        left: -201px;
+        width: 200px;
+    }
 }

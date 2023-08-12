@@ -6,4 +6,8 @@ $(document).ready(function(){
             $("header").removeClass("active");
         }
     });
+    $(".nav-burger").click(function(){
+        $(this).children("i").toggleClass("fa-times");
+        $(".main-menu").toggleClass("active");
+    });
 });
