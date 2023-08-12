@@ -166,7 +166,7 @@ header.active {
         align-items: center;
         justify-content: flex-start;
         height: 100%;
-        padding-top: 70px;
+        padding: 70px 0;
         background: var(--primary-color);
         overflow-y: scroll;
         transition: var(--primary-transition);
