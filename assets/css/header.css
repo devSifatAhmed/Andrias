@@ -196,6 +196,17 @@ header.active {
         color: var(--black-color) !important;
         font-weight: 600 !important;
     }
+    .h-hire-btn{
+        background: var(--black-color) !important;
+        border: 2px solid var(--black-color) !important;
+        color: var(--primary-color) !important;
+    }
+    .h-hire-btn:hover,
+    .h-hire-btn:focus,
+    .h-hire-btn.active{
+        background: transparent !important;
+        color: var(--black-color) !important;
+    }
 }
 @media(max-width: 355px){
     .main-menu {
